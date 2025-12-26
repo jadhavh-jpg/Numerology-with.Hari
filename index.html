@@ -228,6 +228,39 @@ footer{
     text-decoration:none;
   }
 }
+  <style>
+  /* aapka purana CSS */
+
+  /* 🔽 YAHAN paste karo (style ke end me) */
+  .hero-image{
+    position:relative;
+    width:100%;
+    height:420px;
+    border-radius:22px;
+    overflow:hidden;
+  }
+
+  .hero-image img{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    opacity:0;
+    transform:translateX(40px);
+    transition:opacity 1s ease, transform 1s ease;
+  }
+
+  .hero-image img.active{
+    opacity:1;
+    transform:translateX(0);
+  }
+
+  @media(max-width:768px){
+    .hero-image{height:300px;}
+  }
+</style>
+
 </style>
 </head>
 
@@ -250,13 +283,14 @@ footer{
 </header>
 <section id="home" class="hero">
     </div>
-    <div class="hero-image">
-      <img src="hero1.png" class="active">
-      <img src="hero2.png">
-      <img src="hero3.png">
-      <img src="hero4.png">
-      <img src="hero5.png">
-    </div>
+   <div class="hero-image">
+  <img src="hero1.png" class="active">
+  <img src="hero2.png">
+  <img src="hero3.png">
+  <img src="hero4.png">
+  <img src="hero5.png">
+</div>
+
   <div class="hero-grid">
     <div class="hero-card">
       <h1>Numbers don’t lie.<br><span class="gradient">Your life has a pattern.</span></h1>
@@ -324,8 +358,33 @@ setInterval(()=>{
   imgs[i].classList.add('active');
 },3000);
 </script>
+<footer>
+  <p>WhatsApp: <a href="https://wa.me/918821967313">+91 88219 67313</a></p>
+  <p>© 2025 Numerology With Hari</p>
+</footer>
+
+<!-- 🔽 YAHAN SCRIPT PASTE KARO -->
+<script>
+  const slides = document.querySelectorAll('.hero-image img');
+  let index = 0;
+
+  if(slides.length){
+    slides[0].classList.add('active');
+
+    setInterval(() => {
+      slides[index].classList.remove('active');
+      index = (index + 1) % slides.length;
+      slides[index].classList.add('active');
+    }, 3500);
+  }
+</script>
+<!-- 🔼 SCRIPT YAHAN KHATAM -->
 
 </body>
 </html>
+
+</body>
+</html>
+
 
 
