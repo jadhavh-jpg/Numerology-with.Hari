@@ -117,17 +117,26 @@ header{
   width:100%;
   height:420px;
 }
-.hero-image img{
-  position:absolute;
-  inset:0;
+.hero-image{
+  position:relative;
   width:100%;
-  height:100%;
-  object-fit:cover;
-  border-radius:28px;
-  opacity:0;
-  transition:opacity 1s ease;
+  height:auto;
+  min-height:420px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
 }
-.hero-image img.active{opacity:1}
+
+.hero-image img{
+  width:100%;
+  height:auto;
+  max-height:520px;
+  object-fit:contain;   /* 🔥 ye main fix hai */
+  border-radius:22px;
+  transition:opacity 1s ease-in-out;
+}
+
 
 /* ===== SECTION ===== */
 .container{
@@ -318,4 +327,5 @@ setInterval(()=>{
 
 </body>
 </html>
+
 
