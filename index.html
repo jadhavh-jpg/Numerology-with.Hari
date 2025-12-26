@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Numerology With Hari – Decode Your Life</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Numerology With Hari – Naam, DOB aur Numbers se life solutions.">
+
+<style>
+:root{
+  --purple:#5b2aa8;
+  --purple2:#7b3fe4;
+  --soft:#f4effc;
+  --ink:#111;
+  --muted:#666;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto;
+  color:var(--ink);
+  background:#fff;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:80px 20px;
+}
+
+/* ===== HEADER ===== */
+header{
+  position:sticky;
+  top:0;
+  background:#fff;
+  border-bottom:1px solid #eee;
+  z-index:100;
+}
+.nav{
+  max-width:1100px;
+  margin:auto;
+  padding:14px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:800;
+  color:var(--purple);
+}
+.logo img{width:42px;height:42px;border-radius:10px}
+.nav a{
+  margin-left:22px;
+  text-decoration:none;
+  font-weight:600;
+  color:var(--ink);
+}
+.nav a.cta{
+  background:var(--purple);
+  color:#fff;
+  padding:10px 16px;
+  border-radius:10px;
+}
+
+/* ===== HERO ===== */
+.hero{
+  padding:90px 20px;
+  background:radial-gradient(circle at top right,var(--soft),#fff 65%);
+}
+.hero-grid{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:50px;
+}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr}}
+
+.hero-card{
+  background:linear-gradient(135deg,#ffffffee,var(--soft));
+  padding:42px;
+  border-radius:28px;
+  box-shadow:0 30px 60px rgba(0,0,0,.12);
+}
+.hero-card h1{
+  font-size:clamp(32px,5vw,52px);
+  line-height:1.1;
+  margin:0;
+}
+.gradient{
+  background:linear-gradient(90deg,var(--purple),var(--purple2));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.hero-card p{
+  margin-top:16px;
+  color:var(--muted);
+  font-size:1.1rem;
+}
+.points{margin:26px 0}
+.points div{margin-bottom:10px;font-weight:600}
+
+.buttons{display:flex;gap:14px;flex-wrap:wrap}
+.btn{
+  padding:14px 22px;
+  border-radius:14px;
+  font-weight:700;
+  text-decoration:none;
+  cursor:pointer;
+}
+.btn.primary{background:var(--purple);color:#fff}
+.btn.outline{border:2px solid var(--purple);color:var(--purple)}
+
+.hero-img img{
+  width:100%;
+  border-radius:28px;
+  box-shadow:0 35px 70px rgba(0,0,0,.18);
+}
+
+/* WhatsApp hover */
+.whatsapp-btn{
+  background:#25D366;
+  color:#0b3d1c;
+}
+.whatsapp-btn span.alt{display:none}
+.whatsapp-btn:hover span.main{display:none}
+.whatsapp-btn:hover span.alt{display:inline}
+
+/* ===== SECTION TITLE ===== */
+.section-title{text-align:center;margin-bottom:50px}
+.section-title h2{font-size:2.4rem}
+
+/* ===== TOOLS ===== */
+.tools{background:var(--soft)}
+.tool-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:24px;
+}
+@media(max-width:900px){.tool-grid{grid-template-columns:1fr 1fr}}
+.tool{
+  background:#fff;
+  border-radius:22px;
+  padding:30px;
+  text-align:center;
+  box-shadow:0 15px 35px rgba(0,0,0,.08);
+}
+.tool .icon{
+  width:64px;height:64px;
+  border-radius:50%;
+  background:var(--soft);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:28px;
+  margin:auto;
+  color:var(--purple);
+}
+.tool h4{margin:16px 0 8px}
+
+/* ===== PRICING ===== */
+.pricing-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:30px;
+}
+@media(max-width:900px){.pricing-grid{grid-template-columns:1fr}}
+
+.price-box{
+  position:relative;
+  background:#fff;
+  border-radius:26px;
+  padding:36px 30px 34px 36px;
+  box-shadow:0 18px 45px rgba(0,0,0,.08);
+}
+.price-box::before{
+  content:"";
+  position:absolute;
+  left:0;top:0;
+  width:6px;height:100%;
+  background:linear-gradient(180deg,var(--purple),var(--purple2));
+  border-radius:26px 0 0 26px;
+}
+.price-box.highlight{transform:scale(1.04)}
+.price{
+  font-size:2.6rem;
+  font-weight:800;
+  color:var(--purple);
+  margin:10px 0;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  background:#0f0b18;
+  color:#ccc;
+  text-align:center;
+  padding:50px 20px;
+}
+footer a{color:#fff;text-decoration:none}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">
+      <img src="HARILOGO.png">
+      Numerology With Hari
+    </div>
+    <div>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#tools">Tools</a>
+      <a href="#pricing">Pricing</a>
+      <a href="https://calendly.com/jadhav-h/30min" class="cta" target="_blank">Appointment</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="hero-grid">
+
+    <div class="hero-card">
+      <h1>Numbers don’t lie.<br>
+        <span class="gradient">Your life has a pattern.</span></h1>
+
+      <p>Jab sab ruk jata hai, aksar wajah <b>numbers</b> hote hain.</p>
+
+      <div class="points">
+        <div>✔ Naam & DOB based guidance</div>
+        <div>✔ Practical solutions</div>
+        <div>✔ WhatsApp personal consult</div>
+      </div>
+
+      <div class="buttons">
+        <a href="https://wa.me/918821967313"
+           target="_blank"
+           class="btn whatsapp-btn"
+           onmouseover="this.href='https://chat.whatsapp.com/FxJaj6qeS5DLC7XoCFhtg8'"
+           onmouseout="this.href='https://wa.me/918821967313'">
+          <span class="main">Chat on WhatsApp</span>
+          <span class="alt">Join WhatsApp Group</span>
+        </a>
+
+        <a href="https://calendly.com/jadhav-h/30min" target="_blank" class="btn outline">
+          Book Appointment
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-img">
+      <img id="heroImage" src="hero1.png">
+    </div>
+
+  </div>
+</section>
+
+<section id="about" class="container">
+  <div class="section-title"><h2>About</h2></div>
+  <p style="max-width:820px;margin:auto">
+    Main <b>Hari H Jadhav</b> hoon. Numerology mere liye drama nahi,
+    balki clarity ka tool hai. Naam, DOB aur mobile number ke
+    vibrations se real-life decisions clear hote hain.
+  </p>
+</section>
+
+<section id="tools" class="tools container">
+  <div class="section-title"><h2>Free Tools</h2></div>
+  <div class="tool-grid">
+    <div class="tool"><div class="icon">🔢</div><h4>Destiny Number</h4></div>
+    <div class="tool"><div class="icon">📆</div><h4>Personal Year</h4></div>
+    <div class="tool"><div class="icon">🧾</div><h4>Name Number</h4></div>
+    <div class="tool"><div class="icon">🍀</div><h4>Lucky Name</h4></div>
+  </div>
+</section>
+
+<section id="pricing" class="container">
+  <div class="section-title"><h2>Consultation Pricing</h2></div>
+  <div class="pricing-grid">
+    <div class="price-box">
+      <h3>Basic Reading</h3>
+      <div class="price">₹499</div>
+    </div>
+    <div class="price-box highlight">
+      <h3>Name Correction</h3>
+      <div class="price">₹999</div>
+    </div>
+    <div class="price-box">
+      <h3>Complete Guidance</h3>
+      <div class="price">₹1999</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>WhatsApp: <a href="https://wa.me/918821967313">+91 88219 67313</a></p>
+  <p>© 2025 Numerology With Hari</p>
+</footer>
+
+<script>
+const imgs=["hero1.png","hero2.png","hero3.png","hero4.png","hero5.png"];
+let i=0;
+setInterval(()=>{
+  document.getElementById("heroImage").src=imgs[++i%imgs.length];
+},3500);
+</script>
+
+</body>
+</html>
