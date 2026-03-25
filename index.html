@@ -9,58 +9,68 @@
 :root{
   --primary:#0F172A;
   --accent:#7C3AED;
+  --gold:#F59E0B;
   --bg:#F8FAFC;
   --card:#ffffff;
+  --text:#111827;
 }
 
 body{
   margin:0;
   font-family:system-ui;
   background:var(--bg);
+  color:var(--text);
 }
 
-/* MOBILE APP STYLE NAV */
-.bottom-nav{
-  position:fixed;
-  bottom:0;
-  left:0;
-  right:0;
-  background:#fff;
+/* ===== DESKTOP NAV ===== */
+.desktop-nav{
   display:flex;
-  justify-content:space-around;
-  padding:10px;
-  border-top:1px solid #eee;
-  z-index:999;
+  justify-content:space-between;
+  padding:15px 30px;
+  background:#fff;
+  position:sticky;
+  top:0;
+  border-bottom:1px solid #eee;
 }
-.bottom-nav a{
+.desktop-nav a{
+  margin-left:15px;
   text-decoration:none;
+  font-weight:600;
   color:#111;
-  font-size:14px;
+}
+.desktop-nav a:hover{color:var(--accent)}
+
+/* ===== MOBILE NAV ===== */
+.bottom-nav{
+  display:none;
 }
 
-/* HERO */
+/* ===== HERO ===== */
 .hero{
-  padding:40px 15px 100px;
-  text-align:center;
+  padding:80px 20px;
+  background:linear-gradient(135deg,#f5f3ff,#fff);
 }
-
-.hero h1{
-  font-size:28px;
+.hero-grid{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
 }
-
+.hero h1{font-size:48px}
 .hero span{
-  color:var(--accent);
+  background:linear-gradient(90deg,#7C3AED,#F59E0B);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
 }
 
-/* IMAGE ANIMATION */
+/* HERO IMAGE */
 .hero-image{
   position:relative;
-  height:260px;
-  margin-top:20px;
+  height:420px;
   border-radius:20px;
   overflow:hidden;
 }
-
 .hero-image img{
   position:absolute;
   width:100%;
@@ -68,104 +78,280 @@ body{
   object-fit:cover;
   opacity:0;
   transform:translateX(100%);
-  transition:1s;
+  transition:all 1s ease;
 }
-
 .hero-image img.active{
   opacity:1;
   transform:translateX(0);
 }
 
+/* ===== BUTTON ===== */
+.btn{
+  padding:12px 22px;
+  border-radius:12px;
+  font-weight:600;
+  border:none;
+  cursor:pointer;
+  transition:0.3s;
+}
+.primary{
+  background:var(--accent);
+  color:#fff;
+}
+.primary:hover{
+  background:#5B21B6;
+  transform:scale(1.05);
+}
+
+/* ===== SECTION ===== */
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:60px 20px;
+}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
 /* CARD */
 .card{
   background:var(--card);
-  margin:15px;
-  padding:20px;
-  border-radius:15px;
-  box-shadow:0 10px 20px rgba(0,0,0,0.05);
+  border-radius:18px;
+  padding:25px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.06);
+  transition:0.3s;
+  text-align:center;
+}
+.card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.1);
 }
 
+/* INPUT */
 input{
-  width:100%;
   padding:10px;
-  margin-top:10px;
+  width:80%;
   border-radius:8px;
   border:1px solid #ccc;
+  margin:10px;
 }
 
-button{
-  width:100%;
-  margin-top:10px;
-  padding:12px;
-  background:var(--accent);
+/* REMEDIES */
+.remedy{
+  background:var(--card);
+  border-radius:14px;
+  padding:15px;
+  margin:10px 0;
+  cursor:pointer;
+  border-left:4px solid var(--gold);
+  transition:0.3s;
+}
+.remedy:hover{
+  background:#f3f0ff;
+  transform:translateX(5px);
+}
+.remedy-content{
+  display:none;
+  padding-top:10px;
+}
+
+/* FOOTER */
+footer{
+  background:#111;
   color:#fff;
-  border:none;
+  padding:40px;
+  text-align:center;
+}
+.social a{
+  margin:0 10px;
+  font-size:20px;
+  text-decoration:none;
+}
+
+/* LOGIN MODAL */
+.modal{
+  display:none;
+  position:fixed;
+  top:0;left:0;
+  width:100%;height:100%;
+  background:rgba(0,0,0,0.6);
+}
+.modal-content{
+  background:#fff;
+  padding:20px;
+  margin:100px auto;
+  width:300px;
   border-radius:10px;
 }
 
-/* SECTION */
-.section{
-  padding-bottom:100px;
+/* ===== MOBILE RESPONSIVE ===== */
+@media(max-width:768px){
+
+  .desktop-nav{display:none;}
+
+  .bottom-nav{
+    display:flex;
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    background:#fff;
+    justify-content:space-around;
+    padding:10px;
+    border-top:1px solid #eee;
+    z-index:999;
+  }
+
+  .hero{
+    padding:40px 15px 100px;
+    text-align:center;
+  }
+
+  .hero-grid{
+    grid-template-columns:1fr;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
 }
 </style>
 </head>
 
 <body>
 
+<!-- DESKTOP NAV -->
+<nav class="desktop-nav">
+  <b>Numerology With Hari</b>
+  <div>
+    <a href="#">Home</a>
+    <a href="#tools">Tools</a>
+    <a href="#remedies">Remedies</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#" onclick="openLogin()">Login</a>
+  </div>
+</nav>
+
 <!-- HERO -->
 <section class="hero">
-  <h1>Unlock Your Destiny<br><span>With Numbers</span></h1>
-  <p>Naam, DOB aur mobile number — sab kuch life decide karta hai</p>
+  <div class="hero-grid">
 
-  <div class="hero-image">
-    <img src="hero1.png" class="active">
-    <img src="hero2.png">
-    <img src="hero3.png">
+    <div>
+      <h1>Unlock Your Destiny<br><span>With Numbers</span></h1>
+      <p>Name, DOB & Mobile number reveal your future path.</p>
+      <button class="btn primary">Book Appointment</button>
+    </div>
+
+    <div class="hero-image">
+      <img src="hero1.png" class="active">
+      <img src="hero2.png">
+      <img src="hero3.png">
+    </div>
+
   </div>
 </section>
 
 <!-- TOOLS -->
-<div class="section">
+<section id="tools" class="container">
+  <h2 align="center">Free Tools</h2>
 
-<div class="card">
-  <h3>📱 Mobile Calculator</h3>
-  <input id="mobile">
-  <button onclick="calcMobile()">Check</button>
-  <p id="mobileResult"></p>
-</div>
+  <div class="grid">
 
-<div class="card">
-  <h3>🔤 Name Calculator</h3>
-  <input id="name">
-  <button onclick="calcName()">Check</button>
-  <p id="nameResult"></p>
-</div>
+    <div class="card">
+      <h3>📱 Mobile Calculator</h3>
+      <input id="mobile">
+      <button onclick="calcMobile()" class="btn primary">Check</button>
+      <p id="mobileResult"></p>
+    </div>
 
-<div class="card">
-  <h3>📆 DOB Calculator</h3>
-  <input type="date" id="dob">
-  <button onclick="calcDOB()">Check</button>
-  <p id="dobResult"></p>
-</div>
+    <div class="card">
+      <h3>🔤 Name Calculator</h3>
+      <input id="name">
+      <button onclick="calcName()" class="btn primary">Check</button>
+      <p id="nameResult"></p>
+    </div>
 
-</div>
+    <div class="card">
+      <h3>📆 DOB Calculator</h3>
+      <input type="date" id="dob">
+      <button onclick="calcDOB()" class="btn primary">Check</button>
+      <p id="dobResult"></p>
+    </div>
 
-<!-- BOTTOM NAV -->
+  </div>
+</section>
+
+<!-- REMEDIES -->
+<section id="remedies" class="container">
+  <h2 align="center">Free Remedies</h2>
+
+  <div class="remedy" onclick="toggle(this)">
+    Number 1 Remedy
+    <div class="remedy-content">Offer water to Sun daily</div>
+  </div>
+
+  <div class="remedy" onclick="toggle(this)">
+    Number 2 Remedy
+    <div class="remedy-content">Use white colors</div>
+  </div>
+
+  <div class="remedy" onclick="toggle(this)">
+    Number 3 Remedy
+    <div class="remedy-content">Respect teachers & elders</div>
+  </div>
+
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="container">
+  <h2 align="center">Pricing</h2>
+
+  <div class="grid">
+    <div class="card">₹499 Basic Reading</div>
+    <div class="card">₹999 Name Correction</div>
+    <div class="card">₹1999 Full Guidance</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="social">
+    <a href="#">📘</a>
+    <a href="#">📸</a>
+    <a href="#">▶️</a>
+  </div>
+  <p>WhatsApp: 8821967313</p>
+  <p>© Numerology With Hari</p>
+</footer>
+
+<!-- MOBILE NAV -->
 <div class="bottom-nav">
-  <a href="#">🏠 Home</a>
-  <a href="#">🧮 Tools</a>
-  <a href="#">💬 WhatsApp</a>
-  <a href="#">👤 Login</a>
+  <a href="#">🏠</a>
+  <a href="#tools">🧮</a>
+  <a href="#remedies">💡</a>
+  <a href="#">💬</a>
+  <a href="#" onclick="openLogin()">👤</a>
+</div>
+
+<!-- LOGIN -->
+<div id="loginModal" class="modal">
+  <div class="modal-content">
+    <h3>Login</h3>
+    <input placeholder="Email"><br>
+    <input placeholder="Password"><br>
+    <button class="btn primary">Login</button>
+  </div>
 </div>
 
 <script>
-// HERO ANIMATION (SLIDE EFFECT)
-const slides = document.querySelectorAll(".hero-image img");
-let i = 0;
-
+// HERO SLIDER
+let i=0;
+const slides=document.querySelectorAll(".hero-image img");
 setInterval(()=>{
   slides[i].classList.remove("active");
-  i = (i + 1) % slides.length;
+  i=(i+1)%slides.length;
   slides[i].classList.add("active");
 },2500);
 
@@ -189,6 +375,17 @@ function calcDOB(){
   for(let i=0;i<d.length;i++) s+=+d[i];
   while(s>9) s=s.toString().split('').reduce((a,b)=>+a+ +b);
   dobResult.innerText="Life Path: "+s;
+}
+
+// REMEDY TOGGLE
+function toggle(el){
+  let c=el.querySelector(".remedy-content");
+  c.style.display=c.style.display=="block"?"none":"block";
+}
+
+// LOGIN
+function openLogin(){
+  document.getElementById("loginModal").style.display="block";
 }
 </script>
 
